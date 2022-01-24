@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, MenuItem } = require("electron");
+const { app, BrowserWindow, Menu } = require("electron");
 const path = require("path");
 
 let mainWin;
@@ -44,6 +44,7 @@ const menuTemplate = [
       },
       {
         label: "Quitter",
+        accelerator: (process.platform === "darwin")?"Cmd+Q":"Ctrl+Q",
         click() {
           app.quit();
         }
